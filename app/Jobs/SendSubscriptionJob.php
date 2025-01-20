@@ -25,10 +25,9 @@ class SendSubscriptionJob implements ShouldQueue
     {
         try {
             $response = Http::post(config('services.slowapi.url'), [
-                'name'      => $this->item->name,
-                'type'      => $this->item->type,
-                'price'     => (float) $this->item->price,
-                'sent_at'   => now()->toDateTimeString(),
+                'ProductName'      => $this->item->name,
+                'Price'     => $this->item->price,
+                'Timestamp'   => now()->toDateTimeString(),
             ]);
 
             Log::info('Subscription item sent to slowapi', [

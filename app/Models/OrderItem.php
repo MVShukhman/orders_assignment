@@ -21,6 +21,6 @@ class OrderItem extends Model
 
     public function isSubscription(): bool
     {
-        return $this->type === 'subscription';
+        return $this->type == 'subscription';
     }
 }
